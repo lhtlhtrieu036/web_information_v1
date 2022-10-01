@@ -51,7 +51,7 @@ $jscomp.polyfill = function (e, r, p, m) { if (r) { p = $jscomp.global; e = e.sp
         function c() { return window.Promise && new Promise(function (a) { return p = a }) } function d(a) { return g.reversed ? g.duration - a : a } function b(a) {
             for (var b = 0, c = {}, d = g.animations, f = d.length; b < f;) {
                 var e = d[b],
-                k = e.animatable, h = e.tweens, n = h.length - 1, l = h[n]; n && (l = r(h, function (b) { return a < b.end })[0] || l); for (var h = Math.min(Math.max(a - l.start - l.delay, 0), l.duration) / l.duration, w = isNaN(h) ? 1 : l.easing(h, l.elasticity), h = l.to.strings, p = l.round, n = [], m = void 0, m = l.to.numbers.length, t = 0; t < m; t++) { var x = void 0, x = l.to.numbers[t], q = l.from.numbers[t], x = l.isPath ? Y(l.value, w * x) : q + w * (x - q); p && (l.isColor && 2 < t || (x = Math.round(x * p) / p)); n.push(x) } if (l = h.length) for (m = h[0], w = 0; w < l; w++)p = h[w + 1], t = n[w], isNaN(t) || (m = p ? m + (t + p) : m + (t + " "));
+                    k = e.animatable, h = e.tweens, n = h.length - 1, l = h[n]; n && (l = r(h, function (b) { return a < b.end })[0] || l); for (var h = Math.min(Math.max(a - l.start - l.delay, 0), l.duration) / l.duration, w = isNaN(h) ? 1 : l.easing(h, l.elasticity), h = l.to.strings, p = l.round, n = [], m = void 0, m = l.to.numbers.length, t = 0; t < m; t++) { var x = void 0, x = l.to.numbers[t], q = l.from.numbers[t], x = l.isPath ? Y(l.value, w * x) : q + w * (x - q); p && (l.isColor && 2 < t || (x = Math.round(x * p) / p)); n.push(x) } if (l = h.length) for (m = h[0], w = 0; w < l; w++)p = h[w + 1], t = n[w], isNaN(t) || (m = p ? m + (t + p) : m + (t + " "));
                 else m = n[0]; ha[e.type](k.target, e.property, m, c, k.id); e.currentValue = m; b++
             } if (b = Object.keys(c).length) for (d = 0; d < b; d++)H || (H = E(document.body, "transform") ? "transform" : "-webkit-transform"), g.animatables[d].target.style[H] = c[d].join(" "); g.currentTime = a; g.progress = a / g.duration * 100
         } function f(a) { if (g[a]) g[a](g) } function e() { g.remaining && !0 !== g.remaining && g.remaining-- } function k(a) {
@@ -94,7 +94,7 @@ $jscomp.polyfill = function (e, r, p, m) { if (r) { p = $jscomp.global; e = e.sp
             var c = q(a); c.pause(); c.duration = 0; c.add = function (d) {
                 c.children.forEach(function (a) {
                     a.began =
-                    !0; a.completed = !0
+                        !0; a.completed = !0
                 }); m(d).forEach(function (b) { var d = z(b, D(S, a || {})); d.targets = d.targets || a.targets; b = c.duration; var e = d.offset; d.autoplay = !1; d.direction = c.direction; d.offset = h.und(e) ? b : L(e, b); c.began = !0; c.completed = !0; c.seek(d.offset); d = q(d); d.began = !0; d.completed = !0; d.duration > b && (c.duration = d.duration); c.children.push(d) }); c.seek(0); c.reset(); c.autoplay && c.restart(); return c
             }; return c
         }; q.random = function (a, c) { return Math.floor(Math.random() * (c - a + 1)) + a }; return q

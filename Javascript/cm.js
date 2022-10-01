@@ -1,11 +1,11 @@
-(function(fn) {
+(function (fn) {
   /* istanbul ignore if  */
   if (typeof module === 'undefined') {
     this.charming = fn;
   } else {
     module.exports = fn;
   }
-})(function(elem, opts) {
+})(function (elem, opts) {
 
   'use strict';
 
@@ -15,7 +15,7 @@
 
   var count = 1;
 
-  var inject = function(elem) {
+  var inject = function (elem) {
     var parentNode = elem.parentNode;
     var str = elem.nodeValue;
     var len = str.length;
